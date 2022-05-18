@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Summer Set '22</title>
+        <title>Summer Set &apos;22</title>
         <meta
           name="description"
           content="Summer Set 2022, an end of summer celebration"
