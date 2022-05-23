@@ -19,7 +19,7 @@ export default function Home() {
         bgSize="cover"
         minH="100vh"
       >
-        <GridItem w={96} color="white">
+        <GridItem maxW={96} px={8} color="white">
           <SummerSetType />
         </GridItem>
       </Grid>
