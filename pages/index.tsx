@@ -31,18 +31,17 @@ export default function Home() {
           },
         }}
       >
-        <GridItem maxW={96} px={8} color="white">
+        <GridItem maxW={96} px={8} color="white" transform="translateY(-67px)">
           <SummerSetType />
         </GridItem>
       </Grid>
       <Box bg="#074575" color="white">
         <Container py={[32, null, 64]}>
           <Text fontSize={["larger", null, "3xl"]} textAlign="center">
-            Summerset is a picnic to celebrate the end of Summer in the Pacific
-            Northwest. Friends and family are invited to join us for live DJ
-            sets, graffiti art, and all around good vibes. All are welcome to
-            bring blankets and beverages as we close out the warm weather in
-            style.
+            Join us for a picnic to celebrate the end of Summer in the Pacific
+            Northwest. Friends and family are invited to enjoy live DJ sets,
+            graffiti art, and all around good vibes. All are welcome to bring
+            blankets and beverages as we close out the warm weather in style.
           </Text>
         </Container>
       </Box>
