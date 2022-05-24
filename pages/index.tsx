@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Box, Container, Grid, GridItem, Text } from "@chakra-ui/react";
-import SummerSetType from "../components/SummerSetType";
+import Register from "../components/Register";
 
 export default function Home() {
   return (
@@ -45,12 +45,21 @@ export default function Home() {
       </Grid>
       <Box bg="#074575" color="white">
         <Container py={[32, null, 64]}>
-          <Text fontSize={["larger", null, "3xl"]} textAlign="center">
+          <Text
+            fontSize={["2xl", null, "3xl"]}
+            textAlign="center"
+            fontFamily="Permanent Marker"
+            mb={32}
+          >
             Join us for a picnic to celebrate the end of Summer in the Pacific
-            Northwest. Friends and family are invited to enjoy live DJ sets,
-            graffiti art, and all around good vibes. All are welcome to bring
-            blankets and beverages as we close out the warm weather in style.
+            Northwest.
+            <br />
+            <br />
+            Friends and family are invited to enjoy live DJ sets, graffiti art,
+            and good vibes. All are welcome to bring blankets and beverages as
+            we close out the warm weather in style.
           </Text>
+          <Register />
         </Container>
       </Box>
     </>
