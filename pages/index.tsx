@@ -14,6 +14,15 @@ export default function Home() {
           content="Summer Set 2022, an end of summer celebration"
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:title"
+          content="Summer Set 2022, an end of summer celebration"
+        />
+        <meta
+          property="og:image"
+          content="https://summerset22.com/meta-image.jpg"
+        />
+        <meta property="og:url" content="https://summerset22.com" />
       </Head>
       <TopNav />
       <Grid
