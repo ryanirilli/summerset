@@ -4,7 +4,7 @@ export default function TopNav() {
     <Box
       bg="#6875B3"
       color="white"
-      py={4}
+      py={2}
       px={8}
       position="sticky"
       top={0}

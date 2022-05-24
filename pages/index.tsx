@@ -62,8 +62,8 @@ export default function Home() {
             we close out the warm weather in style.
           </Text>
         </Container>
-        <Register />
       </Box>
+      <Register />
     </>
   );
 }
