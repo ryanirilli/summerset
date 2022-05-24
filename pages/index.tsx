@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { Box, Container, Grid, GridItem, Text } from "@chakra-ui/react";
 import SummerSetType from "../components/SummerSetType";
 
@@ -31,8 +32,15 @@ export default function Home() {
           },
         }}
       >
-        <GridItem maxW={96} px={8} color="white" transform="translateY(-67px)">
-          <SummerSetType />
+        <GridItem px={8} color="white" transform="translateY(-67px)">
+          <Box p={32}>
+            <Image
+              alt="summer set logo"
+              src="/summerset-logo-full.svg"
+              width={686}
+              height={539}
+            />
+          </Box>
         </GridItem>
       </Grid>
       <Box bg="#074575" color="white">
