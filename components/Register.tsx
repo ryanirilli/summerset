@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Box } from "@chakra-ui/react";
 import Script from "next/script";
 
 export default function Register() {
@@ -35,7 +36,7 @@ export default function Register() {
   return (
     <>
       <Script src="https://www.eventbrite.com/static/widgets/eb_widgets.js" />
-      <div id="eventbrite-widget-container-348228961197"></div>
+      <Box id="eventbrite-widget-container-348228961197" />
     </>
   );
 }

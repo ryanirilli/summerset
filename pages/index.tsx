@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Box, Container, Grid, GridItem, Text } from "@chakra-ui/react";
 import Register from "../components/Register";
+import TopNav from "../components/TopNav";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <TopNav />
       <Grid
         placeContent="center"
         bgGradient="linear(to-b, #6875B3, #7490C1, #008AD0)"
@@ -44,23 +46,23 @@ export default function Home() {
         </GridItem>
       </Grid>
       <Box bg="#074575" color="white">
-        <Container py={[32, null, 64]}>
+        <Container py={[16]}>
           <Text
-            fontSize={["2xl", null, "3xl"]}
+            fontSize={["3xl", null, "4xl"]}
             textAlign="center"
             fontFamily="Permanent Marker"
-            mb={32}
+            mb={8}
           >
             Join us for a picnic to celebrate the end of Summer in the Pacific
             Northwest.
-            <br />
-            <br />
+          </Text>
+          <Text fontSize={["xl", null, "2xl"]} textAlign="center" mb={32}>
             Friends and family are invited to enjoy live DJ sets, graffiti art,
             and good vibes. All are welcome to bring blankets and beverages as
             we close out the warm weather in style.
           </Text>
-          <Register />
         </Container>
+        <Register />
       </Box>
     </>
   );
