@@ -33,7 +33,7 @@ export default function Home() {
         }}
       >
         <GridItem px={8} color="white" transform="translateY(-67px)">
-          <Box p={32}>
+          <Box p={[0, null, 32]}>
             <Image
               alt="summer set logo"
               src="/summerset-logo-full.svg"
