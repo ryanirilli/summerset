@@ -9,7 +9,6 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
             rel="stylesheet"
           />
-          <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
         </Head>
         <body>
           <Main />
