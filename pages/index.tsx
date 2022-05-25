@@ -1,10 +1,14 @@
+import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Box, Container, Grid, GridItem, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Grid, GridItem, Text } from "@chakra-ui/react";
+import { BsFillLightningFill } from "react-icons/bs";
 import Register from "../components/Register";
 import TopNav from "../components/TopNav";
+import FAQ from "../components/FAQ";
 
 export default function Home() {
+  const [isShowingFaq, setIsShowingFaq] = useState(false);
   return (
     <>
       <Head>
@@ -24,7 +28,18 @@ export default function Home() {
         />
         <meta property="og:url" content="https://summerset22.com" />
       </Head>
-      <TopNav />
+      <TopNav>
+        <Button
+          size="lg"
+          borderRadius="full"
+          colorScheme="gray"
+          variant="outline"
+          leftIcon={<BsFillLightningFill />}
+          onClick={() => setIsShowingFaq(true)}
+        >
+          FAQs
+        </Button>
+      </TopNav>
       <Grid
         placeContent="center"
         bgGradient="linear(to-b, #6875B3, #7490C1, #008AD0)"
@@ -60,6 +75,7 @@ export default function Home() {
             fontSize={["3xl", null, "4xl"]}
             textAlign="center"
             fontFamily="Permanent Marker"
+            lineHeight="9"
             mb={8}
           >
             Join us for a picnic to celebrate the end of Summer in the Pacific
@@ -73,6 +89,7 @@ export default function Home() {
         </Container>
       </Box>
       <Register />
+      <FAQ isOpen={isShowingFaq} onClose={() => setIsShowingFaq(false)} />
     </>
   );
 }
