@@ -95,9 +95,9 @@ export default function FAQ({ isOpen, onClose }: IFAQ): JSX.Element {
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
-                We'll have a taco bar that will surely dry up quick so if you
-                plan on lunch, show up on time. Otherwise please bring food and
-                beverages for yourself!
+                We&apos;ll have a taco bar that will surely dry up quick so if
+                you plan on lunch, show up on time. Otherwise please bring food
+                and beverages for yourself!
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
