@@ -37,7 +37,7 @@ export default function FAQ({ isOpen, onClose }: IFAQ): JSX.Element {
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
-                I mean, why not? Summer set is about creating a fun and positive
+                I mean, why not? Summer Set is about creating a fun and positive
                 gathering of people because we love you.
               </AccordionPanel>
             </AccordionItem>

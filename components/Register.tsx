@@ -1,61 +1,84 @@
-import { useEffect, useRef, useState } from "react";
+import { useState, useCallback } from "react";
 import {
   Box,
+  Button,
   Container,
   HStack,
-  Skeleton,
-  SkeletonCircle,
+  Text,
+  FormControl,
+  FormLabel,
+  FormHelperText,
+  Input,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
 } from "@chakra-ui/react";
-import Script from "next/script";
 
 export default function Register() {
-  const hasCreatedRef = useRef(false);
-  const scriptLoadInterval = useRef<NodeJS.Timer>();
-  const [isLoaded, setIsLoaded] = useState(false);
-  useEffect(() => {
-    if (hasCreatedRef.current) {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState(false);
+  const onSend = useCallback(async () => {
+    if (!email) {
       return;
     }
-    hasCreatedRef.current = true;
-
-    function initWidget() {
-      // @ts-ignore
-      if (window.EBWidgets) {
-        clearInterval(scriptLoadInterval.current);
-        // @ts-ignore
-        window.EBWidgets.createWidget({
-          // Required
-          widgetType: "checkout",
-          eventId: "348228961197",
-          iframeContainerId: "eventbrite-widget-container-348228961197",
-
-          // Optional
-          iframeContainerHeight: 425, // Widget height in pixels. Defaults to a minimum of 425px if not provided
-          //onOrderComplete: exampleCallback  // Method called when an order has successfully completed
-        });
-        setIsLoaded(true);
-      } else {
-        scriptLoadInterval.current = setInterval(initWidget, 1000);
-      }
+    error && setError(false);
+    try {
+      await fetch("/api/rsvp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+    } catch (err: any) {
+      setError(true);
     }
+  }, [email, error]);
 
-    initWidget();
-  }, []);
   return (
-    <Box py={16}>
-      <Script src="https://www.eventbrite.com/static/widgets/eb_widgets.js" />
-      <Container>
-        {!isLoaded && (
-          <>
-            <HStack mb={4}>
-              <SkeletonCircle size="10" />
-              <Skeleton w="100%" h={8} />
-            </HStack>
-            <Skeleton h={8} mb={4} />
-          </>
+    <Box pb={16} bgGradient="linear(to-t, #6875B3, #7490C1, #008AD0)">
+      <Container
+        bg="white"
+        p={[4, null, 8]}
+        pt={8}
+        pb={[16, null, 12]}
+        boxShadow={["none", null, "lg"]}
+        transform="translateY(-32px)"
+        borderRadius={["none", null, "lg"]}
+      >
+        <Text
+          fontSize={["3xl", null, "4xl"]}
+          textAlign="center"
+          fontFamily="Permanent Marker"
+          mb={8}
+        >
+          RSVP to the event
+        </Text>
+        {error && (
+          <Alert status="error">
+            <AlertIcon />
+            <AlertTitle>Damn!</AlertTitle>
+            <AlertDescription>
+              Something broke on our end, sorry...
+            </AlertDescription>
+          </Alert>
         )}
-
-        <Box id="eventbrite-widget-container-348228961197" />
+        <FormControl>
+          <FormLabel htmlFor="email">Email address</FormLabel>
+          <HStack>
+            <Input
+              onChange={(e) => setEmail(e.target.value)}
+              size="lg"
+              id="email"
+              type="email"
+            />
+            <Button colorScheme="blue" size="lg" onClick={onSend}>
+              Send
+            </Button>
+          </HStack>
+          <FormHelperText>We'll keep you posted on details</FormHelperText>
+        </FormControl>
       </Container>
     </Box>
   );

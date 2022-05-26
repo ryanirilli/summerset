@@ -17,7 +17,7 @@ export default function TopNav({ children }) {
             August 27th
           </Heading>
           <Heading letterSpacing="tighter" size="sm" textTransform="uppercase">
-            2pm &nbsp; | &nbsp; Golden Gardens
+            2pm &nbsp; | &nbsp; Location TBD
           </Heading>
         </Box>
         <Box>{children}</Box>

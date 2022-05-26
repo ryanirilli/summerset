@@ -70,7 +70,7 @@ export default function Home() {
         </GridItem>
       </Grid>
       <Box bg="#074575" color="white">
-        <Container py={[16]}>
+        <Container pt={[16]} pb={[4]}>
           <Text
             fontSize={["3xl", null, "4xl"]}
             textAlign="center"
@@ -78,13 +78,13 @@ export default function Home() {
             lineHeight="9"
             mb={8}
           >
-            Join us for a picnic to celebrate the end of Summer in the Pacific
+            Join us for a day to celebrate the end of Summer in the Pacific
             Northwest.
           </Text>
           <Text fontSize={["xl", null, "2xl"]} textAlign="center" mb={32}>
-            Friends and family are invited to enjoy live DJ sets, graffiti art,
-            and good vibes. All are welcome to bring blankets and beverages as
-            we close out the warm weather in style.
+            Everyone is invited to enjoy DJ sets, live Graffiti Artists, and
+            good vibes. Bring a blanket and some beverages to close out the warm
+            weather in style.
           </Text>
         </Container>
       </Box>
