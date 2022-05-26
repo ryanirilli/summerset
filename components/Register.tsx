@@ -77,7 +77,7 @@ export default function Register() {
               Send
             </Button>
           </HStack>
-          <FormHelperText>We'll keep you posted on details</FormHelperText>
+          <FormHelperText>We&apos;ll keep you posted on details</FormHelperText>
         </FormControl>
       </Container>
     </Box>
